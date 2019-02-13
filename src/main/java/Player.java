@@ -1,14 +1,14 @@
 
-public class Player {
+class Player {
     private String name;
     private int numberOfWins;
     private char typeKey;
 
-    public Player(String name) {
+    Player(String name) {
         this.name = name;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
@@ -20,7 +20,7 @@ public class Player {
         return numberOfWins;
     }*/
 
-    public void setNumberOfWins(int numberOfWins) {
+    void setNumberOfWins(int numberOfWins) {
         this.numberOfWins = this.numberOfWins + numberOfWins;
     }
 }

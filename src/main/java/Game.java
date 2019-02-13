@@ -1,14 +1,15 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Game {
-    ArrayList<Player> players;
-    boolean win;
-    Scanner scanner;
+class Game {
+    private ArrayList<Player> players;
+    private boolean win;
+    private Scanner scanner;
 
     Game() {
-        players = new ArrayList<Player>();
+        players = new ArrayList<>();
         System.out.println("Старт новой игры");
+
         scanner = new Scanner(System.in);
         System.out.println("Первый игрок введи свое имя");
         Player playerOne = new Player(scanner.nextLine());
@@ -16,7 +17,11 @@ public class Game {
         System.out.println("Второй игрок введи свое имя");
         Player playerTwo = new Player(scanner.nextLine());
         players.add(playerTwo);
+
         System.out.println("Добро пожаловать " + playerOne.getName() + ", " + playerTwo.getName());
+
+        Field field = new Field();
+        field.show();
     }
 
     void startRound() {
