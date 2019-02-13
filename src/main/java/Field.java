@@ -1,8 +1,12 @@
-
 public class Field {
     final int FIELD_SIZE = 3;
+    int[][] field;
 
-    void showStatistic() {
+    public Field() {
+
+    }
+
+    void show() {
 
     }
 }
