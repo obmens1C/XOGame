@@ -3,7 +3,7 @@ public class Field {
     int[][] field;
 
     public Field() {
-
+        field = new int[FIELD_SIZE][FIELD_SIZE];
     }
 
     void show() {
