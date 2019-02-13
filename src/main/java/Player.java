@@ -1,7 +1,7 @@
 
 class Player {
     private String name;
-    private int numberOfWins;
+    private int numberOfWins = 0;
     private char typeKey;
 
     Player(String name) {
@@ -12,15 +12,19 @@ class Player {
         return name;
     }
 
-  /*  public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getNumberOfWins() {
+    int getNumberOfWins() {
         return numberOfWins;
-    }*/
+    }
 
     void setNumberOfWins(int numberOfWins) {
         this.numberOfWins = this.numberOfWins + numberOfWins;
+    }
+
+    void setTypeKey(char typeKey) {
+        this.typeKey = typeKey;
+    }
+
+    char getTypeKey() {
+        return typeKey;
     }
 }

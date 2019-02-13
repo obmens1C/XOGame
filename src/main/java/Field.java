@@ -19,4 +19,8 @@ class Field {
             }
         }
     }
+
+    void checkStep(int step, char typeKey) {
+        field.set(step-1, typeKey);
+    }
 }
