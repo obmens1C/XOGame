@@ -6,7 +6,7 @@ class Game {
     private boolean win;
     private Scanner scanner;
     private Field field;
-    //private int countCheck;
+    private int countCheck;
 
     Game() {
         players = new ArrayList<>();
@@ -35,7 +35,7 @@ class Game {
         int i = 0;
         int step;
         Player currentPlayer;
-        //countCheck = 0;
+        countCheck = 0;
 
         do {
             currentPlayer = players.get(i);
@@ -45,12 +45,12 @@ class Game {
             field.setStep(step, currentPlayer.getTypeKey());
             field.show();
 
-           // if (countCheck > 4) {
+            if (countCheck > 4) {
                 win = field.checkWin(step, currentPlayer.getTypeKey());
-            //}
+            }
 
             i = (i == 0) ? 1 : 0;
-           // countCheck++;
+           countCheck++;
         } while (!isEnd());
         System.out.printf("Поздравляем, %s! Победа!\n", currentPlayer.getName());
         currentPlayer.setNumberOfWins(1);

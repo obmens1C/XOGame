@@ -46,12 +46,13 @@ class Field {
     }
 
     boolean checkWin(int step, char typeKey) {
-        int counter = 1;
-        ArrayList<int[]> pairs = getPairs(step);
+        ArrayList<int[]> pairs = getPairs(step-1);
 
         for (int[] pair : pairs) {
-            for (int j : pair) {
-                if (field.get(j) == typeKey) {
+            int counter = 0;
+            for (int aPair : pair) {
+                //   System.out.printf("Индекс: %d, значение: %s, счетчик: %d \n", pair[j], field.get(pair[j]), counter);
+                if (field.get(aPair) == typeKey) {
                     counter++;
                 }
             }
@@ -62,11 +63,11 @@ class Field {
         return false;
     }
 
-    ArrayList<int[]> getPairs(int step) {
+    private ArrayList<int[]> getPairs(int step) {
         ArrayList<int[]> pairsChecked = new ArrayList<>();
         for (int[] pairChecked : winPairs) {
-            for (int i = 0; i < pairChecked.length; i++) {
-                if (pairChecked[i] == step) {
+            for (int aPairChecked : pairChecked) {
+                if (aPairChecked == step) {
                     pairsChecked.add(pairChecked);
                 }
             }
