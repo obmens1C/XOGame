@@ -1,14 +1,16 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Game {
+public class Game {
     private ArrayList<Player> players;
     private boolean win;
     private Scanner scanner;
     private Field field;
     private int countCheck;
 
-    Game() {
+    public Game() {
         players = new ArrayList<>();
         System.out.println("Старт новой игры");
 
@@ -31,7 +33,7 @@ class Game {
         field.show();
     }
 
-    void startRound() {
+    public void startRound() {
         int i = 0;
         int step;
         Player currentPlayer;

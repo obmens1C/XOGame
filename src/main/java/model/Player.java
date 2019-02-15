@@ -1,3 +1,4 @@
+package model;
 
 class Player {
     private String name;
