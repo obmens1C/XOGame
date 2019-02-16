@@ -14,7 +14,7 @@ public class XOGame extends Application {
             String FXML_FILE = "/fxml/primary.fxml";
             FXMLLoader loader = new FXMLLoader();
             Parent root = loader.load(getClass().getResourceAsStream(FXML_FILE));
-            primaryStage.setTitle("Hello World");
+            primaryStage.setTitle("XO Game");
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
         } catch (IOException ex) {
