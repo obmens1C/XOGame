@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import model.Player;
 
 public class Controller {
     @FXML
@@ -38,7 +39,7 @@ public class Controller {
     Button button9;
 
     @FXML
-    Button buttonStart;
+    Button buttonNew;
 
     @FXML
     Label labelFirstName;
@@ -55,6 +56,27 @@ public class Controller {
     @FXML
     public void onActionButtonExitMainScene(ActionEvent actionEvent) {
         System.exit(0);
+    }
+
+    @FXML
+    public void onActionButtonNewMainScene(ActionEvent actionEvent) {
+        String firstName = textFieldFirstName.getText().trim();
+        String secondName = textFieldSecondName.getText().trim();
+
+        if (firstName.isEmpty() || secondName.isEmpty()) {
+            System.out.println("One name is Empty");
+        } else {
+            labelFirstName.setText(firstName);
+            textFieldFirstName.setVisible(false);
+            Player player1 = new Player(firstName);
+
+            labelSecondName.setText(secondName);
+            textFieldSecondName.setVisible(false);
+            Player player2 = new Player(firstName);
+        }
+
+
+
     }
 }
 

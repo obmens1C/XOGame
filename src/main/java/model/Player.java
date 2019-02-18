@@ -1,11 +1,11 @@
 package model;
 
-class Player {
+public class Player {
     private String name;
     private int numberOfWins = 0;
     private char typeKey;
 
-    Player(String name) {
+    public Player(String name) {
         this.name = name;
     }
 
