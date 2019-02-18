@@ -54,29 +54,71 @@ public class Controller {
     TextField textFieldSecondName;
 
     @FXML
+    Button buttonStart;
+
+    @FXML
+    TextField textFieldFirstSymbol;
+
+    @FXML
+    TextField textFieldSecondSymbol;
+
+    @FXML
+    Label labelFirstSymbol;
+
+    @FXML
+    Label labelSecondSymbol;
+
+    String firstName;
+    String secondName;
+
+    Player player1;
+    Player player2;
+
+    @FXML
     public void onActionButtonExitMainScene(ActionEvent actionEvent) {
         System.exit(0);
     }
 
     @FXML
     public void onActionButtonNewMainScene(ActionEvent actionEvent) {
-        String firstName = textFieldFirstName.getText().trim();
-        String secondName = textFieldSecondName.getText().trim();
+        firstName = textFieldFirstName.getText().trim();
+        secondName = textFieldSecondName.getText().trim();
 
         if (firstName.isEmpty() || secondName.isEmpty()) {
-            System.out.println("One name is Empty");
+            System.out.println("Name is Empty");
         } else {
             labelFirstName.setText(firstName);
             textFieldFirstName.setVisible(false);
-            Player player1 = new Player(firstName);
+            player1 = new Player(firstName);
 
             labelSecondName.setText(secondName);
             textFieldSecondName.setVisible(false);
-            Player player2 = new Player(firstName);
+            player2 = new Player(secondName);
+
         }
+    }
 
 
+    @FXML
+    public void onActionButtonStartMainScene(ActionEvent actionEvent) {
+        String firstSymbol = textFieldFirstSymbol.getText().trim();
+        String secondSymbol = textFieldSecondSymbol.getText().trim();
 
+        if (firstSymbol.isEmpty() || secondSymbol.isEmpty()) {
+            System.out.println("Empty symbols");
+        } else if (firstSymbol.equals(secondSymbol)) {
+            System.out.println("These are the same characters.");
+        } else {
+            labelFirstName.setText(firstName + " use a symbol: " + firstSymbol);
+            labelFirstSymbol.setText("");
+            textFieldFirstSymbol.setVisible(false);
+            player1.setTypeKey(firstSymbol.charAt(0));
+
+            labelSecondName.setText(secondName + " use a symbol: " + secondSymbol);
+            labelSecondSymbol.setText("");
+            textFieldSecondSymbol.setVisible(false);
+            player2.setTypeKey(secondSymbol.charAt(0));
+        }
     }
 }
 

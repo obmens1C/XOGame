@@ -21,7 +21,7 @@ public class Player {
         this.numberOfWins = this.numberOfWins + numberOfWins;
     }
 
-    void setTypeKey(char typeKey) {
+   public void setTypeKey(char typeKey) {
         this.typeKey = typeKey;
     }
 
