@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import model.Game;
 import model.Player;
 
 public class Controller {
@@ -86,6 +87,8 @@ public class Controller {
 
         if (firstName.isEmpty() || secondName.isEmpty()) {
             System.out.println("Name is Empty");
+        } else if (firstName.equals(secondName)) {
+            System.out.println("These are the same names.");
         } else {
             labelFirstName.setText(firstName);
             textFieldFirstName.setVisible(false);
@@ -94,10 +97,9 @@ public class Controller {
             labelSecondName.setText(secondName);
             textFieldSecondName.setVisible(false);
             player2 = new Player(secondName);
-
+            buttonStart.setVisible(true);
         }
     }
-
 
     @FXML
     public void onActionButtonStartMainScene(ActionEvent actionEvent) {
@@ -118,6 +120,9 @@ public class Controller {
             labelSecondSymbol.setText("");
             textFieldSecondSymbol.setVisible(false);
             player2.setTypeKey(secondSymbol.charAt(0));
+
+            Game gameFXML = new Game(player1, player2);
+
         }
     }
 }

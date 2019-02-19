@@ -33,6 +33,12 @@ public class Game {
         field.show();
     }
 
+    public Game(Player playerOne, Player playerTwo) {
+        players = new ArrayList<>();
+        players.add(playerOne);
+        players.add(playerTwo);
+    }
+
     public void startRound() {
         int i = 0;
         int step;
