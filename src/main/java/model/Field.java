@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-class Field {
+public class Field {
     private ArrayList<Character> field;
     private ArrayList<int[]> winPairs;
 
@@ -15,7 +15,7 @@ class Field {
     private int[] pair7 = {4, 5, 6};
     private int[] pair8 = {7, 8, 9};
 
-    Field() {
+    public Field() {
         field = new ArrayList<>();
         for (int i = 1; i <= 9 ; i++) {
             field.add(Integer.toString(i).charAt(0));
