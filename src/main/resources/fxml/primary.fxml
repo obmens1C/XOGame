@@ -16,7 +16,7 @@
     </Button>
     <Button fx:id="button7" font="$x1" layoutX="202.0" layoutY="229.0" mnemonicParsing="false" onAction="#onActionButtonN" text="7" />
     <Button fx:id="button4" font="$x1" layoutX="202.0" layoutY="169.0" mnemonicParsing="false" onAction="#onActionButtonN" text="4" />
-    <Button fx:id="button1" font="$x1" layoutX="201.0" layoutY="111.0" mnemonicParsing="false" onAction="#onActionButtonN" text="1" />
+    <Button fx:id="button1" disable="false" font="$x1" layoutX="201.0" layoutY="111.0" mnemonicParsing="false" onAction="#onActionButtonN" text="1" textAlignment="LEFT" />
     <Button fx:id="button2" font="$x1" layoutX="272.0" layoutY="111.0" mnemonicParsing="false" onAction="#onActionButtonN" text="2" />
     <Button fx:id="button5" font="$x1" layoutX="271.0" layoutY="169.0" mnemonicParsing="false" onAction="#onActionButtonN" text="5" />
     <Button fx:id="button8" font="$x1" layoutX="273.0" layoutY="228.0" mnemonicParsing="false" onAction="#onActionButtonN" text="8" />

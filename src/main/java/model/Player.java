@@ -25,7 +25,7 @@ public class Player {
         this.typeKey = typeKey;
     }
 
-    char getTypeKey() {
+    public char getTypeKey() {
         return typeKey;
     }
 }

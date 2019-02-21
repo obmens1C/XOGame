@@ -1,5 +1,7 @@
 package model;
 
+import controller.Controller;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -67,5 +69,9 @@ public class Game {
 
     private boolean isEnd() {
         return win;
+    }
+
+    public void startRoundFX(Controller controller) {
+
     }
 }

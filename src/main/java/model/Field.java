@@ -43,7 +43,7 @@ public class Field {
         }
     }
 
-    void setStep(int step, char typeKey) {
+    public void setStep(int step, char typeKey) {
         field.set(step-1, typeKey);
     }
 

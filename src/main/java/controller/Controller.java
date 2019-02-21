@@ -5,9 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import model.Field;
 import model.Game;
 import model.Player;
-import model.Field;
 
 public class Controller {
     @FXML
@@ -76,6 +76,9 @@ public class Controller {
     Player player1;
     Player player2;
 
+    Game gameFXML;
+    Field field;
+
     @FXML
     public void onActionButtonExitMainScene(ActionEvent actionEvent) {
         System.exit(0);
@@ -122,15 +125,18 @@ public class Controller {
             textFieldSecondSymbol.setVisible(false);
             player2.setTypeKey(secondSymbol.charAt(0));
 
-            Game gameFXML = new Game(player1, player2);
-            Field field = new Field();
+            gameFXML = new Game(player1, player2);
+            gameFXML.startRoundFX(this);
+            field = new Field();
         }
     }
 
     @FXML
     public void onActionButtonN(ActionEvent actionEvent) {
-
-        System.out.print( actionEvent.getSource());
+        Button thisButton = (Button) actionEvent.getSource();
+        thisButton.setText(String.valueOf(player1.getTypeKey()));//TODO
+        thisButton.setDisable(true);
+        field.setStep(1, player1.getTypeKey());
 
     }
 }
