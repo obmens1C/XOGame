@@ -5,11 +5,32 @@ import controller.Controller;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**Объект класса <strong>Game</strong> создает игровой процесс,
+ * хранит <em>ArrayList</em> игроков
+ * крутит игровой цикл до победного
+ * <code>isWin == true</code>
+ * @author Panfit
+ * @version 1.2
+ */
+
 public class Game {
+    /**
+     * <strong>ArrayList</strong> игроков
+     */
     private ArrayList<Player> players;
+    /**
+    *флаг окончания игры
+    */
     private boolean win;
     private Scanner scanner;
+    /**
+     * объект <code>field</code> игрового поля
+     */
     private Field field;
+    /**
+     * раньше пятого хода никто не победит,
+     * отключим проверку <code>isWin</code>
+     */
     private int countCheck;
 
     public Game() {
@@ -35,12 +56,20 @@ public class Game {
         field.show();
     }
 
+    /**
+     * инициализируем конструктором <code>ArrayList</code> игроков
+     * @param playerOne - первый игрок, всегда ходит первый
+     * @param playerTwo - второй игрок, ходит после первого
+     */
     public Game(Player playerOne, Player playerTwo) {
         players = new ArrayList<>();
         players.add(playerOne);
         players.add(playerTwo);
     }
 
+    /**
+     * основной цикл объекта <code>Game</code>
+     */
     public void startRound() {
         int i = 0;
         int step;
@@ -67,11 +96,19 @@ public class Game {
         System.out.printf("Количество побед %d", currentPlayer.getNumberOfWins());
     }
 
+    /**
+     * @return возвращает результат победы
+     */
     private boolean isEnd() {
         return win;
     }
 
+    /**
+     * основной цикл для <em>JavaFX</em> оболочки
+     * @param controller передадим для работы с объектами формы
+     */
     public void startRoundFX(Controller controller) {
-
+        controller = null;
+        System.exit(0);
     }
 }
